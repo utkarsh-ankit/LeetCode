@@ -9,6 +9,6 @@ class Solution:
                 stack.pop()
             else:
                 return False
-        return True
+        return True if not stack else False
 
         
