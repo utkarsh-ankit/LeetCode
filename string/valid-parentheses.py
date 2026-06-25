@@ -5,7 +5,7 @@ class Solution:
         for i in s:
             if i in ("{", "(", "["):
                 stack.append(i)
-            elif i in a and stack[-1]==a[i]:
+            elif i in a and stack[-1]==a[i] and stack:
                 stack.pop()
             else:
                 return False
