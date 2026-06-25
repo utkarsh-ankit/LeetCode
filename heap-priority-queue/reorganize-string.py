@@ -1,26 +1,5 @@
 class Solution:
     def reorganizeString(self, s:str)->str:
-        # cnt = Counter(s)
-        # maxH = [(-c, ch) for ch, c in cnt.items()]
-        # heapq.heapify(maxH)
-        # prev = None
-        # res = ''
-
-        # while prev or maxH:
-        #     if prev and not maxH:
-        #         return ''
-
-        #     c, ch = heapq.heappop(maxH)
-        #     res += ch
-        #     c += 1
-
-        #     if prev:
-        #         heapq.heappush(maxH, prev)
-        #         prev = None
-        #     if c!=0:
-        #         prev = (c, ch)
-
-        # return res
 
         count=Counter(s)
 
