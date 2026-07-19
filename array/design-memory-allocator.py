@@ -12,13 +12,10 @@ class Allocator:
                 free_count+=1
 
                 if free_count==size:
-                    start_idex=i-size+1
+                    start_idx=i-size+1
 
                     self.memory[start_idx:start_idx+size]=[mID]*size
-                    return start_idex
-
-                else:
-                    free_count=0
+                    return start_idx
             else:
                 free_count=0
         return -1
