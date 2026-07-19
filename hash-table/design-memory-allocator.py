@@ -1,7 +1,7 @@
 class Allocator:
 
     def __init__(self, n: int):
-        self.mem=[0]*n
+        self.memory=[0]*n
         
 
     def allocate(self, size: int, mID: int) -> int:
