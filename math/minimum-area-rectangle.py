@@ -37,7 +37,7 @@ class Solution:
                 if (x1,y2) in hmap and (x2,y1) in hmap:
                     area=min(area,abs(x2-x1)*abs(y2-y1))
 
-        return area if area!=float("inf") else -1
+        return area if area!=float("inf") else 0
 
 
 
