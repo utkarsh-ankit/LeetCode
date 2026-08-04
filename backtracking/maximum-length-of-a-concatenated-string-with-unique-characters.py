@@ -25,6 +25,3 @@ class Solution:
             return max(res,backtrack(i+1))
 
         return backtrack(0)
-
-
-        
