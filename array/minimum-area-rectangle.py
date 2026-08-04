@@ -24,7 +24,7 @@ class Solution:
 
 
         hmap={tuple(i) for i in points}
-        area=float('inf')
+        area=float("inf")
 
         for i in range(len(points)):
             for j in range(i+1, len(points)):
@@ -34,8 +34,8 @@ class Solution:
                 if x1==x2 or y1==y2:
                     continue
 
-                if (x1,y2) in hmap and (x2,y1) in hmap:
-                    area=min(area, abs(x2-x1)*abs(y2-y1))
+                if (x1,y2) in hmap or (x2,y1) in hmap:
+                    area=min(area, abs(x1-x2)*abs(y1-y2))
 
         return area if area!=float('inf') else 0
 
