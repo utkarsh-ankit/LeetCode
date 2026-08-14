@@ -1,22 +1,29 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        graph={i:[] for i in range(numCourses)}
-        degree={i:0 for i in range(numCourses)}
-
-        for c,p in prerequisites:
-            graph[p].append(c)
-            degree[c]+=1
-        
-        queue=[node for node in degree if degree[node]==0]
-        processed=0
-
-        while queue:
-            course=queue.pop()
-            processed+=1
-
-            for nei in graph[course]:
-                degree[nei]-=1
-                if degree[nei]==0:
-                    queue.append(nei)
-        
-        return processed==numCourses
+        a= defaultdict(list)
+        for course, prere in prerequisites:
+            a[course].append(prere)
+            
+        path=set()
+        done=set()
+            
+        def dfs(n):
+            if n in path:
+                return False
+            if n in done:
+                return True
+            
+            path.add(n)
+            
+            for neigh in a[n]:
+                if not dfs(neigh):
+                    return False
+            
+            path.remove(n)
+            done.add(n)
+            return True
+            
+        for i in range(numCourses):
+            if not dfs(i):
+                return False
+        return True
